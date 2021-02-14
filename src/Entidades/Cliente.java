@@ -1,38 +1,55 @@
 package Entidades;
 
+//Los clientes pueden tener un máximo de 1 cámara en alquiler.
+/*
+Cada item se alquila un máximo de 7 días, por cada día de retraso, se impone una “multa” de un mes sin posibilidad de obtener una nueva cámara. */
+
 public class Cliente {
-	private String nombre = "";
-	private String direccion = "";
-	private int telefono = 0 ;
-	private String historialAlquiler = "";
-	private int mesesPenalizacion = 0;
+	private String nombre;
+	private String direccion;
+	private int telefono;
+	private String historialAlquiler;
+	private int mesesPenalizacion;
+	private Item item;
 	
-	public Cliente(String nombre, String direccion, int telefono, String historialAlquiler, int mesesPenalizacion) {
+	public Cliente(String nombre, String direccion, int telefono) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.historialAlquiler = historialAlquiler;
 		this.mesesPenalizacion = mesesPenalizacion;
 	}
-	
+
+
+	public void alquilarItem(Item item){
+		this.item = item;
+		item.alquilar();
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getDireccion() {
 		return direccion;
 	}
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
 	public int getTelefono() {
 		return telefono;
 	}
+
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
+
 	public String getHistorialAlquiler() {
 		return historialAlquiler;
 	}

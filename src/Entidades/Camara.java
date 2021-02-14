@@ -1,9 +1,9 @@
 package Entidades;
 
 public class Camara {
-	private String marca = "";
-	private String modelo = "";
-	private Boolean soporte = false;
+	private String marca;
+	private String modelo;
+	private Boolean soporte;
 
 	public Camara(String marca, String modelo, Boolean soporte) {
 		this.marca = marca;
