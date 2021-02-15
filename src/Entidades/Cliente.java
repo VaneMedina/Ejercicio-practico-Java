@@ -22,8 +22,11 @@ public class Cliente {
 
 
 	public void alquilarItem(Item item){
-		this.item = item;
-		item.alquilar();
+		if (item.getEstado() == "disponible") {
+			this.item = item;
+			this.item.alquilar();
+		}else
+			System.out.println("La cámara se encuentra"+item.getEstado());
 	}
 
 	public String getNombre() {
