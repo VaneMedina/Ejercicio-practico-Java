@@ -10,7 +10,7 @@ public class Tienda {
     private String duenio;
     private String direccion;
     private int telefono;
-    List<Item> items;
+    private List<Item> items;
 
     public Tienda(String duenio, String direccion, int telefono) {
         this.duenio = duenio;
@@ -55,14 +55,15 @@ public class Tienda {
         this.items = items;
     }
     
-    public void alquilar(Cliente cliente, Item item) {
-		if (item.getEstado() == Estado.Alquilada){
-		    System.out.println("el item seleccionado se encuentra alquilado");
+    public String alquilarItem(Cliente cliente, Item item) {
+		if (item.getEstado() != Estado.Disponible){
+		    return "El item se encuentra alquilado.";
         }else{
 		    item.setEstado(Estado.Alquilada);
-		    HistorialAlquiler historial = new HistorialAlquiler(cliente,LocalDate.now(),LocalDate.now().plusDays(7));
-		    item.historialAlquileres.add(historial);
+		    item.getHistorialAlquileres().add(new HistorialItem(cliente, LocalDate.now(), LocalDate.now().plusDays(7)));
+		    cliente.getHistorialAlquileres().add(new HistorialCliente(item, LocalDate.now(), LocalDate.now().plusDays(7)));
         }
+		return "El item se ha alquilado correctamente.";
 	}
     
     public void personalizar() {

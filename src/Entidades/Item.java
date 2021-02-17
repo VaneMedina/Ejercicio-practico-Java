@@ -1,21 +1,19 @@
 package Entidades;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Item {
     private Camara camara;
-
     private Estado estado;
-    public List<HistorialAlquiler> historialAlquileres;
-
+    private List<Historial> historialAlquileres;
     private double costoAlquiler;
 
-    public Item(Camara camara, Estado estado, HistorialAlquiler historial, double costoAlquiler) {
+    public Item(Camara camara, Estado estado, double costoAlquiler) {
         this.camara = camara;
         this.estado = estado;
-        this.historialAlquileres.add(historial);
+        this.historialAlquileres = new ArrayList<>();
         this.costoAlquiler = costoAlquiler;
     }
 
@@ -27,12 +25,11 @@ public class Item {
         this.camara = camara;
     }
 
-
-    public List<HistorialAlquiler> getHistorialAlquilers() {
+    public List<Historial> getHistorialAlquileres() {
         return historialAlquileres;
     }
 
-    public void setHistorialAlquilers(List<HistorialAlquiler> historialAlquilers) {
+    public void setHistorialAlquilers(List<Historial> historialAlquilers) {
         this.historialAlquileres = historialAlquilers;
     }
 

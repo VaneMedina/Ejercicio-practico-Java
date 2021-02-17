@@ -1,31 +1,32 @@
 package Entidades;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente {
 	private String nombre;
 	private String direccion;
 	private int telefono;
-	private String historialAlquiler;
+	private List<Historial> historialAlquileres;
 	private int mesesPenalizacion;
-	private Item item;
-	
+
+
 	public Cliente(String nombre, String direccion, int telefono) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.historialAlquiler = historialAlquiler;
+		this.historialAlquileres = new ArrayList<>();
 		this.mesesPenalizacion = mesesPenalizacion;
 	}
 
-
-	public void alquilarItem(Item item){
+	/*public void alquilarItem(Item item){
 		if (item.getEstado() == "disponible") {
 			this.item = item;
-			this.item.alquilar();
+			//this.item.alquilar();
 		}else
 			System.out.println("La cámara se encuentra"+item.getEstado());
-	}
+	}*/
 
 	public String getNombre() {
 		return nombre;
@@ -51,12 +52,14 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 
-	public String getHistorialAlquiler() {
-		return historialAlquiler;
+	public List<Historial> getHistorialAlquileres() {
+		return historialAlquileres;
 	}
-	public void setHistorialAlquiler(String historialAlquiler) {
-		this.historialAlquiler = historialAlquiler;
+
+	public void setHistorialAlquileres(List<Historial> historialAlquileres) {
+		this.historialAlquileres = historialAlquileres;
 	}
+
 	public int getMesesPenalizacion() {
 		return mesesPenalizacion;
 	}

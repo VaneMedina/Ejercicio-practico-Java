@@ -7,16 +7,17 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		
 
-		Cliente cliente = new Cliente("Micaela","Alsina", 1213);
 
-		Tienda tienda1 = new Tienda("pepito", "pepe", 123456789);
+		Cliente cliente = new Cliente("Micaela", "Alsina", 1213);
+
+		Tienda tienda1 = new Tienda("Pepito", "Pepe", 123456789);
+
 		Camara camara1 = new Camara("cannon", "gerger", true);
-		tienda1.agregarItems(new Item(camara1, Estado.Alquilada,null,100));
-		tienda1.agregarItems(new Item(camara1, Estado.Disponible,null,200));
+		tienda1.agregarItems(new Item(camara1, Estado.Alquilada, 100));
+		tienda1.agregarItems(new Item(camara1, Estado.Disponible, 200));
 
-		cliente.alquilarItem(tienda1.getItems().get(0));
+		System.out.println(tienda1.alquilarItem(cliente, tienda1.getItems().get(0)));
 		
 		
 		Scanner entrada = new Scanner(System.in);
@@ -222,6 +223,5 @@ public class Main {
 		System.out.println("3- Regresar al menu principal");
 	}
 
-		
-	}
 
+}
