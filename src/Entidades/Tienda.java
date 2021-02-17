@@ -1,7 +1,5 @@
 package Entidades;
 
-
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,15 +63,20 @@ public class Tienda {
         }
 		return "El item se ha alquilado correctamente.";
 	}
-    
-    public void personalizar() {
-		
-	}
-    
-    public void obtenerCamarasDisponibles() {
-		
-	}
-    
+
+	public void penalizar(Cliente cliente, Integer meses){
+        cliente.setMesesPenalizacion(LocalDate.now().plusMonths(meses));
+    }
+
+    public void obtenerItemsDisponibles(){
+        for (Item item: items) {
+            if(item.getEstado().equals(Estado.Disponible)){
+                System.out.println("La cámara modelo "+item.getCamara().getModelo()+" se encuentra disponible.");
+            }
+        }
+    }
+
+
     public void obtenerCamarasConRetraso() {
 		
 	}
@@ -85,5 +88,9 @@ public class Tienda {
     public void obtenerCamaraEnReparacion() {
 		
 	}
+
+	public void cambiarEstado(){
+
+    }
 }
 

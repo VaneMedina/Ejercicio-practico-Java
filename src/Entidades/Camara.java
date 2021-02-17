@@ -1,20 +1,20 @@
 package Entidades;
 
 public class Camara {
-	private String marca;
+	private Marca marca;
 	private String modelo;
 	private Boolean soporte;
 
-	public Camara(String marca, String modelo, Boolean soporte) {
+	public Camara(Marca marca, String modelo, Boolean soporte) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.soporte = soporte;
 }
 	
-	public String getMarca() {
+	public Marca getMarca() {
 		return marca;
 	}
-	public void setMarca(String marca) {
+	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
 	public String getModelo() {

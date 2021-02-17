@@ -12,14 +12,29 @@ public class Main {
 		Cliente cliente = new Cliente("Micaela", "Alsina", 1213);
 
 		Tienda tienda1 = new Tienda("Pepito", "Pepe", 123456789);
+		Marca marca1 = new Marca("Cannon", "Alvear 2500");
 
-		Camara camara1 = new Camara("cannon", "gerger", true);
+		Camara camara1 = new Camara(marca1, "Gerger", true);
 		tienda1.agregarItems(new Item(camara1, Estado.Alquilada, 100));
 		tienda1.agregarItems(new Item(camara1, Estado.Disponible, 200));
 
 		System.out.println(tienda1.alquilarItem(cliente, tienda1.getItems().get(0)));
-		
-		
+
+		tienda1.penalizar(cliente, 2);
+		System.out.println(cliente.getFechaDespenalizacion());
+
+		tienda1.obtenerItemsDisponibles();
+
+
+
+
+
+
+
+
+
+
+
 		Scanner entrada = new Scanner(System.in);
 		
 		int op ; 

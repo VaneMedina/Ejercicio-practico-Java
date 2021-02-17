@@ -28,5 +28,4 @@ public abstract class Historial {
         this.fechaDevolucion = fechaDevolucion;
     }
 
-
 }

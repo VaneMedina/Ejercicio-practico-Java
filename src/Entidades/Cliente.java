@@ -1,6 +1,6 @@
 package Entidades;
 
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class Cliente {
 	private String direccion;
 	private int telefono;
 	private List<Historial> historialAlquileres;
-	private int mesesPenalizacion;
+	private LocalDate mesesPenalizacion;
 
 
 	public Cliente(String nombre, String direccion, int telefono) {
@@ -17,16 +17,8 @@ public class Cliente {
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.historialAlquileres = new ArrayList<>();
-		this.mesesPenalizacion = mesesPenalizacion;
 	}
 
-	/*public void alquilarItem(Item item){
-		if (item.getEstado() == "disponible") {
-			this.item = item;
-			//this.item.alquilar();
-		}else
-			System.out.println("La cámara se encuentra"+item.getEstado());
-	}*/
 
 	public String getNombre() {
 		return nombre;
@@ -60,15 +52,11 @@ public class Cliente {
 		this.historialAlquileres = historialAlquileres;
 	}
 
-	public int getMesesPenalizacion() {
+	public LocalDate getFechaDespenalizacion() {
 		return mesesPenalizacion;
 	}
-	public void setMesesPenalizacion(int mesesPenalizacion) {
+	public void setMesesPenalizacion(LocalDate mesesPenalizacion) {
 		this.mesesPenalizacion = mesesPenalizacion;
 	}
-	
-	public void fechaDespenalizacion() {
-		
-	}
-	
+
 }
