@@ -1,11 +1,8 @@
 package Tarea;
 
-import Entidades.Camara;
-import Entidades.Cliente;
-import Entidades.Item;
-import Entidades.Tienda;
+import Entidades.*;
 
-import java.util.Scanner; 
+import java.util.Scanner;
 
 public class Main {
 
@@ -14,11 +11,10 @@ public class Main {
 
 		Cliente cliente = new Cliente("Micaela","Alsina", 1213);
 
-
 		Tienda tienda1 = new Tienda("pepito", "pepe", 123456789);
 		Camara camara1 = new Camara("cannon", "gerger", true);
-		tienda1.agregarItems(new Item(camara1, "alquilada"));
-		tienda1.agregarItems(new Item(camara1, "en la tienda"));
+		tienda1.agregarItems(new Item(camara1, Estado.Alquilada,null,100));
+		tienda1.agregarItems(new Item(camara1, Estado.Disponible,null,200));
 
 		cliente.alquilarItem(tienda1.getItems().get(0));
 		
@@ -29,13 +25,7 @@ public class Main {
 		
 		
 		do {
-			System.out.println("------MENU PRINCIPAL------");
-			System.out.println("Ingrese la opcion deseada:");
-			System.out.println("1- Camaras");
-			System.out.println("2- Clientes");
-			System.out.println("3- Items");
-			System.out.println("4- Servicio Tecnico");
-			System.out.println("5- Salir del programa");
+			ImprimirMenuPrincipal();
 			
 			op = entrada.nextInt();
 			
@@ -43,12 +33,7 @@ public class Main {
 			case 1:
 				///
 				do {
-					System.out.println("Ingrese la opcion deseada:");
-					System.out.println("1- Alquilar");
-					System.out.println("2- Camaras disponibles");
-					System.out.println("3- Camaras con retraso");
-					//System.out.println("4- Servicio Tecnico1");
-					System.out.println("4- Regresar al menu principal");
+					ImprimirOpcionCamaras();
 					
 					op = entrada.nextInt();
 					
@@ -79,12 +64,7 @@ public class Main {
 			case 2:
 				///
 				do {
-					System.out.println("Ingrese la opcion deseada:");
-					System.out.println("1- Agregar un cliente");
-					System.out.println("2- Penalizar un cliente");
-					System.out.println("3- Despenalizar un cliente");
-					//System.out.println("4- Servicio Tecnico2");
-					System.out.println("4- Regresar al menu principal");
+					ImprimirOpcionClientes();
 					
 					op = entrada.nextInt();
 					
@@ -114,14 +94,9 @@ public class Main {
 			case 3:
 				///
 				do {
-					System.out.println("Ingrese la opcion deseada:");
-					System.out.println("1- Costo de alquiler");
-					System.out.println("2- Fecha de devolucion");
-					System.out.println("3- Estado de la Camara");
-					System.out.println("4- Historial de alquiler");
-					System.out.println("5- Codigo de referencia");
-					System.out.println("6- Regresar al menu principal");
-					
+
+					ImprimirOpcionItems();
+
 					op = entrada.nextInt();
 					
 					switch (op) {
@@ -154,12 +129,7 @@ public class Main {
 			case 4:
 				///
 				do {
-					System.out.println("Ingrese la opcion deseada:");
-					System.out.println("1- Camaras en reparacion");
-					System.out.println("2- Historial de camaras reparadas");
-					//System.out.println("3- Items4");
-					//System.out.println("4- Servicio Tecnico4");
-					System.out.println("3- Regresar al menu principal");
+					ImprimirOpcionServicioTecnico();
 					
 					op = entrada.nextInt();
 					
@@ -200,7 +170,57 @@ public class Main {
 			
 			
 		}
-		
+
+		public static void ImprimirMenuPrincipal(){
+			System.out.println("------MENU PRINCIPAL------\n");
+			System.out.println("Ingrese la opcion deseada:");
+			System.out.println("1- Camaras");
+			System.out.println("2- Clientes");
+			System.out.println("3- Items");
+			System.out.println("4- Servicio Tecnico");
+			System.out.println("5- Salir del programa");
+		}
+
+		public static void ImprimirOpcionCamaras() {
+			System.out.println("------MENU CAMARAS------\n");
+			System.out.println("Ingrese la opcion deseada:");
+			System.out.println("1- Alquilar");
+			System.out.println("2- Camaras disponibles");
+			System.out.println("3- Camaras con retraso");
+			//System.out.println("4- Servicio Tecnico1");
+			System.out.println("4- Regresar al menu principal");
+		}
+
+	public static void ImprimirOpcionClientes() {
+		System.out.println("------MENU CLIENTES------\n");
+		System.out.println("Ingrese la opcion deseada:");
+		System.out.println("1- Agregar un cliente");
+		System.out.println("2- Penalizar un cliente");
+		System.out.println("3- Despenalizar un cliente");
+		//System.out.println("4- Servicio Tecnico2");
+		System.out.println("4- Regresar al menu principal");
+	}
+
+	public static void ImprimirOpcionItems() {
+		System.out.println("------MENU ITEMS------\n");
+		System.out.println("Ingrese la opcion deseada:");
+		System.out.println("1- Costo de alquiler");
+		System.out.println("2- Fecha de devolucion");
+		System.out.println("3- Estado de la Camara");
+		System.out.println("4- Historial de alquiler");
+		System.out.println("5- Codigo de referencia");
+		System.out.println("6- Regresar al menu principal");
+	}
+
+	public static void ImprimirOpcionServicioTecnico() {
+		System.out.println("------MENU SERVICIO TECNICO------\n");
+		System.out.println("Ingrese la opcion deseada:");
+		System.out.println("1- Camaras en reparacion");
+		System.out.println("2- Historial de camaras reparadas");
+		//System.out.println("3- Items4");
+		//System.out.println("4- Servicio Tecnico4");
+		System.out.println("3- Regresar al menu principal");
+	}
 
 		
 	}

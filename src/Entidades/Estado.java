@@ -1,5 +1,9 @@
 package Entidades;
 
-public class Estado {
-
+public enum Estado{
+        Alquilada,
+        ConRetraso,
+        EnReparacion,
+        Disponible
 }
+

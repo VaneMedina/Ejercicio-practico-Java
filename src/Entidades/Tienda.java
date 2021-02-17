@@ -2,6 +2,7 @@ package Entidades;
 
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +55,14 @@ public class Tienda {
         this.items = items;
     }
     
-    public void alquilar() {
-		
+    public void alquilar(Cliente cliente, Item item) {
+		if (item.getEstado() == Estado.Alquilada){
+		    System.out.println("el item seleccionado se encuentra alquilado");
+        }else{
+		    item.setEstado(Estado.Alquilada);
+		    HistorialAlquiler historial = new HistorialAlquiler(cliente,LocalDate.now(),LocalDate.now().plusDays(7));
+		    item.historialAlquileres.add(historial);
+        }
 	}
     
     public void personalizar() {
@@ -75,10 +82,6 @@ public class Tienda {
 	}
     
     public void obtenerCamaraEnReparacion() {
-		
-	}
-    
-    public void cambiarEstado() {
 		
 	}
 }
