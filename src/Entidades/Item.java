@@ -2,8 +2,6 @@ package Entidades;
 
 import java.time.LocalDate;
 
-/*
-Cada item se alquila un máximo de 7 días, por cada día de retraso, se impone una “multa” de un mes sin posibilidad de obtener una nueva cámara. */
 
 public class Item {
     private Camara camara;
@@ -43,4 +41,8 @@ public class Item {
     public void setFechaAlquiler(LocalDate fechaAlquiler) {
         this.fechaAlquiler = fechaAlquiler;
     }
+    
+    public void cambiarEstado() {
+		
+	}
 }

@@ -8,4 +8,22 @@ public class Marca {
         this.nombre = nombre;
         this.servicioReparacion = servicioReparacion;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getServicioReparacion() {
+		return servicioReparacion;
+	}
+
+	public void setServicioReparacion(String servicioReparacion) {
+		this.servicioReparacion = servicioReparacion;
+	}
+    
+    
 }

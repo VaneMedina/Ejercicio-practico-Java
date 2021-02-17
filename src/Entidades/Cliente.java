@@ -1,8 +1,6 @@
 package Entidades;
 
-//Los clientes pueden tener un máximo de 1 cámara en alquiler.
-/*
-Cada item se alquila un máximo de 7 días, por cada día de retraso, se impone una “multa” de un mes sin posibilidad de obtener una nueva cámara. */
+
 
 public class Cliente {
 	private String nombre;
@@ -64,6 +62,10 @@ public class Cliente {
 	}
 	public void setMesesPenalizacion(int mesesPenalizacion) {
 		this.mesesPenalizacion = mesesPenalizacion;
+	}
+	
+	public void fechaDespenalizacion() {
+		
 	}
 	
 }
